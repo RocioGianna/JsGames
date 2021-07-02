@@ -19,11 +19,14 @@ function iniciarPagina(){
     inicio();
 
     document.getElementById("btn").addEventListener("click", generarTablero);
-    let casilleros = 4;
+    let casilleros = 6;
     let fichas = [];
     let simbolos = ['🔥','🎂', '🍩', '🍬', '🍨', '🥙', '🍓', '🌭', '🍭', '🍫', '🍷', '✨', '🎄', '☢️','🐶', '🐣' ];
+    let vidasArr = ['💖','💖','💖','💖'];
+    let max = vidasArr.length;
     let segundos = 1000;
     let cantErrores = 0;
+    let vida = 4;
 
     //funcion encargada de generar la cantidad de casilleros del 
     //tablero y asignarles el evento de cuando sean clickeados.
@@ -41,6 +44,9 @@ function iniciarPagina(){
         input.style.display = "none";
         let boton = document.querySelector("#btn");
         boton.style.display = "none";
+
+        //mostrar vidas
+        document.getElementById("vidas").innerHTML = vidasArr;
 
         let tablero = document.getElementById("tablero");
         for(let i = 0; i < casilleros; i++){
@@ -100,6 +106,10 @@ function iniciarPagina(){
         let clicked = e.currentTarget;
         clicked.classList.remove('vueltaFicha');
         clicked.classList.add('fichas');
+        const he = 0;
+
+        //mostrar vidas
+        document.getElementById("vidas").innerHTML = vidasArr;
 
         let fichaElejida = document.getElementsByClassName('fichas');
         arr = [...fichaElejida];
@@ -112,7 +122,7 @@ function iniciarPagina(){
                 });
         }else{
             arr.forEach(element => {
-                element.classList.add('incorrecta');
+                element.classList.add('incorrecta');                
             });
             setTimeout(function(){
                 arr.forEach(element => {
@@ -124,6 +134,19 @@ function iniciarPagina(){
                 console.log(cantErrores);
                 arr = [];
             }, 500);
+            if(vida >= 1){
+                vida = vida - 1;
+                if(vida <= max){
+                    console.log(max + "soy max")
+                    //vidasArr.splice(vida);
+                    vidasArr[vida]="💔";
+                }
+                console.log(vidasArr + "soy vidaass");
+            }else{
+                setTimeout(function(){
+                    gameOver();
+                }, 1000);
+            }
         }
 
         let acertadas = document.getElementsByClassName('correcta');
@@ -178,5 +201,15 @@ function iniciarPagina(){
         }
         palabra('Nivel ' + (level++));
     }
-      
+
+    function gameOver(){
+        let niveles = document.getElementById("niveles");
+        niveles.innerHTML = "";
+        tablero.innerHTML = "";
+            let nombre = document.getElementById("input_name").value;
+                document.querySelector('#game').pause();
+                document.querySelector('audio').pause();
+                document.querySelector('#winner').play();
+                niveles.innerHTML = "Has perdido " + nombre + " se terminaron las vidas :C " ;
+    }      
 }
