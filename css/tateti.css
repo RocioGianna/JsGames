@@ -1,0 +1,87 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#board{
+    background-image: url(https://source.unsplash.com/mfIplTZLE6E/1500x1500);
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.file_board{
+    background-color: lightcoral;
+    width:60% ;
+    display: flex;
+}
+.board_divs{
+    width: 100%;
+    height: 90px;
+    border: 2px solid lightcyan;
+    text-align: center;
+    font-family: 'Sigmar One', cursive;
+    font-size: 50px;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+#div{
+    color:#1a181b;
+    display: block;
+    margin-bottom: 100px;
+    height: 280px;
+    position: absolute;
+    font-family: 'Sigmar One', cursive;
+    font-size: 60px;
+}
+.titulo{
+    color: #744253;
+    font-family: 'Sigmar One', cursive;
+}
+#emoji_options{
+    font-size: 20px;
+    width: 50%;
+}
+#oponent_options{
+    font-size: 20px;
+    width: 50%;
+}
+#btn-start{
+    width: 30%;
+}
+#btn-home a{
+    text-decoration: none;
+    color: white;
+}
+#fondo{
+    text-align: center;
+    width: 100%;
+    height: 350px;
+    background-color: #c78283 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (min-width: 700px){
+    #board{
+        width: 50%;
+        height: 450px;
+        background-color: black;
+    }
+    .file_board{
+        width:40% ;
+    }
+    #div{
+        font-size: 80px;
+    }
+    #fondo{
+        width: 50%;
+    }
+}

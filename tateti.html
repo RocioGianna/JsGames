@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tateti.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="js/tateti.js"></script>
+    <title>TIC - TAC - TOE</title>
+</head>
+<body>
+    <div id="fondo">
+        <h3 class="titulo">Elije tu emoji</h3>
+        <select class="form-control form-control-sm" id="emoji_options">
+            <option value="1">🔥|💧</option>
+            <option value="2">❌|⭕</option>
+            <option value="3">😍|😡</option>
+        </select>
+        <h3 class="titulo">Elije tu oponente</h3>
+        <select class="form-control form-control-sm" id="oponent_options">
+            <option value="1">Vs PC</option>
+            <option value="2">Multijugador</option>
+        </select>
+        <br>
+        <button type="button" class="btn btn-info" id="btn-start">Comenzar!</a></button>
+        <br>
+        <button type="button" class="btn btn-info" id="btn-home" ><a href="home.html">Volver al home</a></button>
+    </div>
+    <div style="display: none" id="board">
+        <div id="ffile_board" class="file_board">
+            <div id="cero_cero" class="board_divs"></div>
+            <div id="cero_uno" class="board_divs"></div>
+            <div id="cero_dos" class="board_divs"></div>
+        </div>
+        <div id="sfile_board" class="file_board">
+            <div id="uno_cero" class="board_divs"></div>
+            <div id="uno_uno" class="board_divs"></div>
+            <div id="uno_dos" class="board_divs"></div>
+        </div>
+        <div id="tfile_board" class="file_board">
+            <div id="dos_cero" class="board_divs"></div>
+            <div id="dos_uno" class="board_divs"></div>
+            <div id="dos_dos" class="board_divs"></div>
+        </div>
+        <br>
+        <div id="div">
+        </div>
+        <br>
+        <button style="display: none" type="button" class="btn btn-info" id="btn-reset">Reset</button>
+    </div>
+</body>
+</html>
