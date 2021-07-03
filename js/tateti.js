@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", cargarPagina);
 function cargarPagina(){
-    let start = document.getElementById("btn-start").addEventListener("click", () =>{
+    document.getElementById("btn-start").addEventListener("click", () =>{
         //quitar visibilidad al boton comenzar
         let fondo = document.getElementById("fondo");
         fondo.style.display = "none";
@@ -23,11 +23,12 @@ function cargarPagina(){
 
     let turno = true;
     let siguiente = true;
+
     function game(element, celdas){
         let oponente = document.getElementById("oponent_options").value;
         let emoji = document.getElementById("emoji_options").value;
         if (oponente == 1){
-            if (turno){
+           // if (turno){
                 if (element.innerHTML == ""){
                     switch (emoji){
                         case "1":
@@ -44,9 +45,9 @@ function cargarPagina(){
                     turno = !turno;
                     robot(celdas);
                 }
-            }else{
-                robot(celdas);
-            }
+           // }else{
+             //   robot(celdas);
+            //}
         }else{
             if (turno){
                 if (element.innerHTML == ""){
@@ -83,6 +84,7 @@ function cargarPagina(){
             }
         }
     }
+    
 
     function robot (celdas){
         setTimeout(function(){
@@ -103,11 +105,11 @@ function cargarPagina(){
                             break;
                         }
                         winner(celdas[x]);
-                        turno = true;
+                        //turno = true;
                         return celdas[x];
                     }
                 }
-            }
+            } 
         }, 800);
        
     }

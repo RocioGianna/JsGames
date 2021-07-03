@@ -22,7 +22,7 @@ function iniciarPagina(){
     let casilleros = 6;
     let fichas = [];
     let simbolos = ['🔥','🎂', '🍩', '🍬', '🍨', '🥙', '🍓', '🌭', '🍭', '🍫', '🍷', '✨', '🎄', '☢️','🐶', '🐣' ];
-    let vidasArr = ['💖','💖','💖','💖'];
+    let vidasArr = ['❤️','❤️','❤️','❤️'];
     let max = vidasArr.length;
     let segundos = 1000;
     let cantErrores = 0;
@@ -46,7 +46,7 @@ function iniciarPagina(){
         boton.style.display = "none";
 
         //mostrar vidas
-        document.getElementById("vidas").innerHTML = vidasArr;
+        document.getElementById("vidas").innerHTML = vidasArr.join(" "); // con el join cambio la separación de los elementos del arreglo. Un espacio en vez de la ','.
 
         let tablero = document.getElementById("tablero");
         for(let i = 0; i < casilleros; i++){
@@ -57,7 +57,7 @@ function iniciarPagina(){
             fichas[i].innerHTML = '';
             fichas[i].classList.add('fichas');
             fichas[i].classList.add('non-selectable');
-            fichas[i].addEventListener('click', jugar);
+            //fichas[i].addEventListener('click', jugar);
             tablero.appendChild(fichas[i]);
         }
         let max = fichas.length;
@@ -75,6 +75,7 @@ function iniciarPagina(){
             for (let i = 0; i < fichas.length; i++){
                 fichas[i].classList.remove('fichas');
                 fichas[i].classList.add('vueltaFicha');
+                fichas[i].addEventListener('click', jugar);
             }
         }, segundos);
     }
@@ -106,10 +107,9 @@ function iniciarPagina(){
         let clicked = e.currentTarget;
         clicked.classList.remove('vueltaFicha');
         clicked.classList.add('fichas');
-        const he = 0;
 
         //mostrar vidas
-        document.getElementById("vidas").innerHTML = vidasArr;
+        document.getElementById("vidas").innerHTML = vidasArr.join(" ");
 
         let fichaElejida = document.getElementsByClassName('fichas');
         arr = [...fichaElejida];
@@ -124,6 +124,14 @@ function iniciarPagina(){
             arr.forEach(element => {
                 element.classList.add('incorrecta');                
             });
+            if(vida >= 1){
+                vida = vida - 1;
+                vidasArr[vida]="☠️";
+            }else{
+                setTimeout(function(){
+                    gameOver();
+                }, 1000);
+            }
             setTimeout(function(){
                 arr.forEach(element => {
                     element.classList.remove('fichas');
@@ -134,19 +142,6 @@ function iniciarPagina(){
                 console.log(cantErrores);
                 arr = [];
             }, 500);
-            if(vida >= 1){
-                vida = vida - 1;
-                if(vida <= max){
-                    console.log(max + "soy max")
-                    //vidasArr.splice(vida);
-                    vidasArr[vida]="💔";
-                }
-                console.log(vidasArr + "soy vidaass");
-            }else{
-                setTimeout(function(){
-                    gameOver();
-                }, 1000);
-            }
         }
 
         let acertadas = document.getElementsByClassName('correcta');
