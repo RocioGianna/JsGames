@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ahorcado.css">
     <title>Ahorcado</title>
 </head>
 <body>
-    <section>
+    <section class="json">
+        <h3>¿Querés agregar una palabra al juego?</h3>
+        <button class="botones" type="button" id="btnAgregar">Agregar</button>
+        <div class="btnTematicas" id="btnT">
+            <label for="animales">Ingresa una palabra:</label>
+            <input id="inputPalabra" type="text">
+            <button class="botones" id="btnE" type="submit">Enviar</button>
+        </div>
+    </section>
+    <section class="juego">
         <div class="resultado" id="display"></div>
         <input id ="inputUsuario">
         <div class="contenedor">

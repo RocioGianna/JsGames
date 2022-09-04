@@ -28,7 +28,6 @@ function cargarPagina(){
         let oponente = document.getElementById("oponent_options").value;
         let emoji = document.getElementById("emoji_options").value;
         if (oponente == 1){
-           // if (turno){
                 if (element.innerHTML == ""){
                     switch (emoji){
                         case "1":
@@ -45,9 +44,6 @@ function cargarPagina(){
                     turno = !turno;
                     robot(celdas);
                 }
-           // }else{
-             //   robot(celdas);
-            //}
         }else{
             if (turno){
                 if (element.innerHTML == ""){
@@ -84,6 +80,7 @@ function cargarPagina(){
             }
         }
     }
+    
     
 
     function robot (celdas){

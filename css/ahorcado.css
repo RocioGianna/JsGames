@@ -1,0 +1,35 @@
+body{
+    background-color: #ff7d00;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.juego{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40%;
+}
+#inputUsuario{
+    width: 30%;
+    height: 35%;
+    border-radius: 9px;
+    margin: 10px;
+}
+.resultado{
+    margin: 10px;
+    text-align: center;
+}
+.botones{
+    border-style: hidden;
+    height: 30px;
+    text-align: center;
+    background-color: #78290f;
+    border-radius: 9px;
+    color: #ffecd1;
+}
+.btnTematicas{
+    display: none;
+}
+.btnTematicasOn{
+    display: block;
+}
