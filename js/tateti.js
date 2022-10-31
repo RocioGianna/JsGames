@@ -12,6 +12,7 @@ function cargarPagina(){
         tablero();
     });
 
+    //funcion que inicializa el tablero del juego
     function tablero(){
         let celdas = document.querySelectorAll(".board_divs");
         celdas.forEach(element => {
